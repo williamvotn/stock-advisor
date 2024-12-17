@@ -13,3 +13,6 @@ venv/
 
 # Ignore log files
 *.log
+
+# Ignore db
+*.db
