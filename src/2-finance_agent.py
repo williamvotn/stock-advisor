@@ -2,8 +2,9 @@
 
 from phi.agent import Agent
 
-# from phi.model.groq import Groq
-from phi.model.openai import OpenAIChat
+from phi.model.groq import Groq
+
+# from phi.model.openai import OpenAIChat
 from phi.tools.yfinance import YFinanceTools
 from dotenv import load_dotenv
 
@@ -20,7 +21,6 @@ def get_company_symbol(company: str) -> str:
         str: The symbol for the company.
     """
     symbols = {
-        "Phidata": "MSFT",
         "Infosys": "INFY",
         "Tesla": "TSLA",
         "Apple": "AAPL",
@@ -32,16 +32,19 @@ def get_company_symbol(company: str) -> str:
 
 
 agent = Agent(
-    # model=Groq(id="llama-3.3-70b-versatile"),
-    model=OpenAIChat(id="gpt-4o"),
+    model=Groq(id="llama-3.3-70b-versatile"),
+    # model=OpenAIChat(id="gpt-4o"),
     tools=[
         YFinanceTools(
-            stock_price=True, analyst_recommendations=True, stock_fundamentals=True
+            stock_price=True,
+            company_info=True,
+            analyst_recommendations=True,
+            stock_fundamentals=True,
         ),
         get_company_symbol,
     ],
     instructions=[
-        "Use tables to display data.",
+        "Use tables to display data and show it in french.",
         "If you need to find the symbol for a company, use the get_company_symbol tool.",
     ],
     show_tool_calls=True,
@@ -50,6 +53,6 @@ agent = Agent(
 )
 
 agent.print_response(
-    "Summarize and compare analyst recommendations and fundamentals for TSLA and AAPL. Show in tables.",
+    "Summarize and compare analyst recommendations and fundamentals for TTE and SNY in french. Show in tables.",
     stream=True,
 )
