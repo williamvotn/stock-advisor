@@ -62,11 +62,13 @@ L'interface utilisateur présente les résultats sous forme de graphiques intera
 
 - Ce graphique montre la comparaison des métriques financières de Total Energie et Sanofi.
 
-### Exemple 2 : NVIDIA infos/recommandations
+### Exemple 2 : NVIDIA informations
 
 ![Informations](screenshots/nvidia_analyse.png)
 
 - L'onglet "Informations" présente les dernières nouvelles sur NVIDIA.
+
+### Exemple 3 : NVIDIA recommandations
 
 ![Recommandations](screenshots/nvidia_analyse_2.png)
 
