@@ -2,7 +2,7 @@
 
 ## Description
 
-Ce projet propose un agent intelligent composé de deux modules principaux :
+Ce projet propose une équipe d'agent IA intelligent utilisant un modèle GPT-4o composé de deux agents principaux permettant la prise de décision sur la meilleure action à acheter (API via Yahoo Finance) :
 
 Web Agent : Un agent spécialisé dans la collecte des sources des articles les plus récents sur une entreprise choisie.
 
